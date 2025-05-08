@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Master Betting Tips</title>
+  <style>
+    :root {
+      --bg-color-dark: #1e1e2f;
+      --bg-color-light: #f4f4f4;
+      --text-color-dark: #ffffff;
+      --text-color-light: #000000;
+      --card-bg-dark: rgba(255, 255, 255, 0.08);
+      --card-bg-light: #ffffff;
+      --accent-color: #00bfa6;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color-dark);
+      color: var(--text-color-dark);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.light-mode {
+      background-color: var(--bg-color-light);
+      color: var(--text-color-light);
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      padding: 0;
+      margin: 0;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      color: #fff;
+    }
+
+    .toggle-container input {
+      margin-left: 10px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      border-radius: 12px;
+      background-color: var(--card-bg-dark);
+      transition: background-color 0.3s;
+    }
+
+    body.light-mode section {
+      background-color: var(--card-bg-light);
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .tip {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 10px;
+    }
+
+    body.light-mode .tip {
+      background-color: #f9f9f9;
+    }
+
+    .cta {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    form input, form button {
+      padding: 10px;
+      margin: 5px 0;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form button {
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ccc;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    footer ul li a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tips">Tips</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="toggle-container">
+      Light Mode
+      <input type="checkbox" id="modeToggle" />
+    </div>
+  </header>
+
+  <section id="home">
+    <h1>Welcome to Master Betting Tips</h1>
+    <p style="text-align:center;">Your trusted source for winning betting advice.</p>
+    <div style="text-align:center; margin-top: 20px;">
+      <a href="#subscription" class="cta">Get Daily Tips</a>
+    </div>
+  </section>
+
+  <section id="featured-tips">
+    <h2>Featured Tips</h2>
+    <div class="tip">
+      <h3>Football Match A vs. Match B</h3>
+      <p>Tip: Team A to win</p>
+    </div>
+    <div class="tip">
+      <h3>Basketball Game X vs. Game Y</h3>
+      <p>Tip: Over 150 points</p>
+    </div>
+  </section>
+
+  <section id="daily-matches">
+    <h2>Today's Matches</h2>
+    <div id="matchesContent" contenteditable="true" style="border: 2px dashed #00bfa6; padding: 20px; border-radius: 10px;">
+      <div class="tip">
+        <h3>Manchester United vs. Liverpool</h3>
+        <p>Time: 18:00 GMT</p>
+        <p>Tip: Over 2.5 goals</p>
+      </div>
+      <div class="tip">
+        <h3>Barcelona vs. Real Madrid</h3>
+        <p>Time: 20:30 GMT</p>
+        <p>Tip: Both teams to score</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 15px;">
+      <button onclick="saveMatches()" class="cta">💾 Save Matches</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Master Betting Tips</h2>
+    <p>We provide top-tier sports betting advice using expert analysis and real-time data from leagues worldwide.</p>
+  </section>
+
+  <section id="tips">
+    <h2>Our Betting Tips</h2>
+    <div class="tip">
+      <h3>Match C vs. Match D</h3>
+      <p>Tip: Over 2.5 goals</p>
+    </div>
+    <div class="tip">
+      <h3>Match E vs. Match F</h3>
+      <p>Tip: Both teams to score</p>
+    </div>
+  </section>
+
+  <section id="blog">
+    <h2>From Our Blog</h2>
+    <div class="tip">
+      <h3>How to Maximize Your Betting Success</h3>
+      <p>Explore our expert strategies to improve your winning odds.</p>
+    </div>
+    <div class="tip">
+      <h3>Understanding Betting Markets</h3>
+      <p>A beginner's guide to odds, markets, and how to read them.</p>
+    </div>
+  </section>
+
+  <section id="subscription">
+    <h2>Subscribe for Premium Tips</h2>
+    <p style="text-align:center;">Get exclusive tips delivered daily to your inbox!</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" required /><br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br />
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Master Betting Tips. All rights reserved.</p>
+    <ul>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("modeToggle");
+    toggle.addEventListener("change", function () {
+      document.body.classList.toggle("light-mode");
+    });
+
+    function saveMatches() {
+      const content = document.getElementById('matchesContent').innerHTML;
+      localStorage.setItem('dailyMatches', content);
+      alert("Matches saved successfully!");
+    }
+
+    window.onload = function () {
+      const saved = localStorage.getItem('dailyMatches');
+      if (saved) {
+        document.getElementById('matchesContent').innerHTML = saved;
+      }
+    };
+  </script>
+</body>
+</html>
